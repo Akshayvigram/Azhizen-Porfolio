@@ -19,7 +19,7 @@ const Aboutus = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-12 2xl:px-16 w-full max-w-7xl 2xl:max-w-[1920px]">
             <div className="flex flex-row justify-between items-center gap-8 2xl:gap-12 w-full mx-auto">
               <div className="md:w-1/2">
-                <p className="text-[#00B4D9] font-bold text-xl sm:text-2xl lg:text-3xl 2xl:text-4xl uppercase tracking-widest mb-3 2xl:mb-4">
+                <p className="text-[#111212] font-bold text-xl sm:text-2xl lg:text-3xl 2xl:text-4xl uppercase tracking-widest mb-3 2xl:mb-4">
                   Pioneer | Produce | Propel
                 </p>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-gray-900 mb-4 2xl:mb-6">

@@ -5,6 +5,7 @@ import foot2 from "../assets/foot2.png";
 import foot3 from "../assets/foot3.png";
 import foot4 from "../assets/foot4.png";
 import logofoot from "../assets/logofoot.png";
+import { FaFacebookF, FaInstagram, FaLinkedinIn,FaYoutube } from 'react-icons/fa';
 
 const FooterSection = () => {
   const navigate = useNavigate();
@@ -64,28 +65,46 @@ const FooterSection = () => {
           <p className="text-gray-400 text-sm md:text-xs 2xl:text-base">
             3rd Floor, Mercury Block <br />KSRCE, Tiruchengode, Namakkal, Tamil Nadu
           </p>
-          <div className="flex justify-center space-x-4 2xl:space-x-6 mt-10 2xl:mt-12 mr-10">
-            <a href="https://link1.com" target="_blank" rel="noopener noreferrer">
-              <img src={foot1} className="w-6 h-6 2xl:w-8 2xl:h-8" alt="Social 1" />
-            </a>
-            <a
-              href="https://www.instagram.com/azhizensolutions?igsh=dDhmeDc4OTNobjk4"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={foot2} className="w-6 h-6 2xl:w-8 2xl:h-8" alt="Instagram" />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/azhizensolutions/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={foot3} className="w-6 h-6 2xl:w-8 2xl:h-8" alt="LinkedIn" />
-            </a>
-            <a href="https://www.youtube.com/@AzhizenSolutions-pvt" target="_blank" rel="noopener noreferrer">
-              <img src={foot4} className="w-6 h-6 2xl:w-8 2xl:h-8" alt="Social 4" />
-            </a>
-          </div>
+         <div className="flex justify-center space-x-4 2xl:space-x-6 mt-10 2xl:mt-12 mr-10">
+  {/* Facebook */}
+  <a
+    href="https://www.facebook.com/azhizensolutions"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-[#f2f4f8]" // Facebook Blue (optional)
+  >
+    <FaFacebookF className="w-6 h-6 2xl:w-8 2xl:h-8" />
+  </a>
+
+  {/* Instagram */}
+  <a
+    href="https://www.instagram.com/azhizensolutions?igsh=dDhmeDc4OTNobjk4"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-white-500" // Optional color
+  >
+    <FaInstagram className="w-6 h-6 2xl:w-8 2xl:h-8" />
+  </a>
+
+  {/* LinkedIn */}
+  <a
+    href="https://www.linkedin.com/company/azhizensolutions/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-[#f6f8fa]" // LinkedIn Blue (optional)
+  >
+    <FaLinkedinIn className="w-6 h-6 2xl:w-8 2xl:h-8" />
+  </a>
+  {/* YouTube */}
+  <a
+    href="https://www.youtube.com/@azhizensolutions" // Replace with your actual YouTube URL
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-white-600"
+  >
+    <FaYoutube className="w-6 h-6 2xl:w-8 2xl:h-8" />
+  </a>
+</div>
         </div>
 
         {/* Quick Links */}
@@ -263,7 +282,7 @@ const FooterSection = () => {
             />
           </div>
           <div className="flex justify-center space-x-4 sm:space-x-6 mt-10 sm:mt-12">
-            <a href="https://www.facebook.com/people/Azhizen-Solutions/61575392279457/?rdid=F1afgpHQQw3Yniwu&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19zoY5afgR%2F" target="_blank" rel="noopener noreferrer">
+            <a href="https://link1.com" target="_blank" rel="noopener noreferrer">
               <img src={foot1} className="w-6 h-6 sm:w-8 sm:h-8" alt="Social 1" />
             </a>
             <a
@@ -280,7 +299,7 @@ const FooterSection = () => {
             >
               <img src={foot3} className="w-6 h-6 sm:w-8 sm:h-8" alt="LinkedIn" />
             </a>
-            <a href="www.youtube.com/@AzhizenSolutions-pvt" target="_blank" rel="noopener noreferrer">
+            <a href="https://link4.com" target="_blank" rel="noopener noreferrer">
               <img src={foot4} className="w-6 h-6 sm:w-8 sm:h-8" alt="Social 4" />
             </a>
           </div>
