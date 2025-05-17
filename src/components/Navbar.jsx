@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom"; // Import useLocation
-import logo from "../assets/logo.jpg"; // Adjust the path accordingly
+import { useNavigate, useLocation } from "react-router-dom";
+import logo from "../assets/logo.jpg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation(); // Get the current path from useLocation
-  const currentPath = location.pathname; // Extract the path to determine the active tab
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -16,10 +16,9 @@ const Navbar = () => {
     navigate(path);
   };
 
-  // Scroll to the top whenever the location changes (when the route changes)
   useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to top of the page
-  }, [location]); // Depend on location, so it triggers on route change
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <nav className="bg-white shadow-md fixed w-full z-10 top-0">
@@ -30,7 +29,7 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Azhizen Logo"
-              className="w-32 h-12 md:w-36 md:h-14 2xl:w-48 2xl:h-16"
+              className="w-32 md:w-36 2xl:w-48 object-contain"
             />
           </a>
         </div>
