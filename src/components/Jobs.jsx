@@ -46,19 +46,19 @@ const Jobs = () => {
 
           {jobListings.map((job, index) => (
             <button
-              key={index}
-              onClick={() => openJobPopup(job)} // Passing job details to the popup
-              className="bg-white text-black rounded-lg p-6 w-full max-w-[350px] md:max-w-[1000px] flex justify-between items-start shadow-[0_0_10px_rgba(0,0,0,0.1)] hover:shadow-[0px_0px_15px_rgba(0,0,0,0.2)] transition-all duration-300"
-            >
+  key={index}
+  onClick={() => openJobPopup(job)}
+  className="bg-[linear-gradient(135deg,#0078B4_0%,#00B4D9_100%)] text-white rounded-lg p-6 w-full max-w-[350px] md:max-w-[1000px] flex justify-between items-start shadow-[0_0_10px_rgba(0,0,0,0.1)] hover:shadow-[0px_0px_15px_rgba(0,0,0,0.2)] transition-all duration-300"
+>
               <div className="flex flex-col">
                 <h2 className="text-black font-poppins text-[25px] md:text-[35px] font-bold leading-tight tracking-wider mb-4">
                   {job.title}
                 </h2>
                 <div className="text-left flex flex-col">
-                  <p className="text-gray-700 font-poppins text-[16px] md:text-[18px] font-light self-stretch">
+                  <p className="text-white font-poppins text-[16px] md:text-[18px] font-light self-stretch">
                     {job.category}
                   </p>
-                  <p className="text-gray-700 font-poppins text-[16px] md:text-[18px] font-light self-stretch">
+                  <p className="text-white font-poppins text-[16px] md:text-[18px] font-light self-stretch">
                     {job.level}, {job.type}
                   </p>
                 </div>

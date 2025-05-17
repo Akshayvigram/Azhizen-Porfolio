@@ -31,19 +31,19 @@ const FoundersSection = () => {
           effect="coverflow"
           grabCursor={true}
           centeredSlides={true}
-          slidesPerView={1} // Adjusted for mobile to ensure single slide centering
+          slidesPerView={1.2} // Default for mobile
           breakpoints={{
-            640: { slidesPerView: 2 }, // Tablet: Show 2 slides, centered
-            1024: { slidesPerView: 3 }, // Desktop: Show 3 slides, centered
-            1536: { slidesPerView: 3 }, // 4K: Show 3 slides, centered
+            640: { slidesPerView: 2.5 }, // Tablet
+            1024: { slidesPerView: 3 }, // Desktop
+            1536: { slidesPerView: 3.5 }, // 4K
           }}
-          spaceBetween={0} // Adjusted to reduce overlap and ensure centering
+          spaceBetween={-10}
           loop={true} // Enables infinite loop
           autoplay={{ delay: 3000, disableOnInteraction: false }} // Auto-scroll effect
           coverflowEffect={{
             rotate: 0,
-            stretch: 0, // Reduced to prevent excessive offset
-            depth: 200, // Increased slightly for better 3D effect
+            stretch: -30,
+            depth: 150,
             modifier: 1,
             slideShadows: false,
           }}
@@ -71,11 +71,11 @@ const FoundersSection = () => {
         </Swiper>
       </div>
 
-      {/* Inline CSS for blur effect */}
+      {/* Inline CSS for stronger blur effect */}
       <style>
         {`
           .swiper-slide {
-            filter: blur(20px);
+            filter: blur(100px);
             transition: filter 0.3s ease;
           }
           .swiper-slide-active {
