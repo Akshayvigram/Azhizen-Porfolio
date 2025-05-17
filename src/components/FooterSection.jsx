@@ -63,7 +63,7 @@ const FooterSection = () => {
             alt="Azhizen Logo"
           />
           <p className="text-gray-400 text-sm md:text-xs 2xl:text-base">
-            3rd Floor, Mercury Block <br />KSRCE, Tiruchengode, Namakkal, Tamil Nadu
+            R-NO:309, Mercury Block <br />KSRCE, Tiruchengode, Namakkal, Tamil Nadu
           </p>
          <div className="flex justify-center space-x-4 2xl:space-x-6 mt-10 2xl:mt-12 mr-10">
   {/* Facebook */}

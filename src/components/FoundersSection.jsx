@@ -2,7 +2,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import { EffectCoverflow } from "swiper/modules";
+import { EffectCoverflow, Autoplay } from "swiper/modules";
 
 import founder1 from "../assets/founder1.png";
 import founder2 from "../assets/founder2.png";
@@ -18,15 +18,13 @@ const FoundersSection = () => {
   return (
     <section className="py-16 sm:py-20 lg:py-24 2xl:py-32 bg-gray-50 min-h-[400px] 2xl:min-h-[600px]">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 2xl:px-16 max-w-7xl 2xl:max-w-[1920px]">
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-black text-center mb-12 sm:mb-16 lg:mb-20 2xl:mb-24 tracking-tight">
-  <span style={{ color: "#00B4D9" }}>O</span>
-  <span>UR</span>
-  <span className="inline-block w-6 sm:w-8 lg:w-6"></span> {/* space */}
-  <span style={{ color: "#00B4D9" }}>F</span>
-  <span>OUNDER'S</span>
-</h2>
-
-
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-black text-center mb-12 sm:mb-16 lg:mb-20 2xl:mb-24 tracking-tight">
+          <span style={{ color: "#00B4D9" }}>O</span>
+          <span>UR</span>
+          <span className="inline-block w-6 sm:w-8 lg:w-6"></span>
+          <span style={{ color: "#00B4D9" }}>F</span>
+          <span>OUNDER'S</span>
+        </h2>
 
         {/* Swiper for Mobile, Desktop, and 4K with Infinite Loop */}
         <Swiper
@@ -49,7 +47,7 @@ const FoundersSection = () => {
             modifier: 1,
             slideShadows: false,
           }}
-          modules={[EffectCoverflow]}
+          modules={[EffectCoverflow, Autoplay]}
           className="w-full pb-8 2xl:pb-12"
         >
           {[...founders, ...founders].map((founder, index) => (
@@ -61,7 +59,7 @@ const FoundersSection = () => {
                 <img
                   src={founder.img}
                   alt={founder.alt}
-                  className="w-full h-full object-cover translate-y-4"
+                  className="w-full h-full object-cover translate-y-4 swiper-slide-img"
                   loading="lazy"
                 />
               </div>
@@ -72,6 +70,19 @@ const FoundersSection = () => {
           ))}
         </Swiper>
       </div>
+
+      {/* Inline CSS for stronger blur effect */}
+      <style>
+        {`
+          .swiper-slide {
+            filter: blur(1000px);
+            transition: filter 0.3s ease;
+          }
+          .swiper-slide-active {
+            filter: none;
+          }
+        `}
+      </style>
     </section>
   );
 };
