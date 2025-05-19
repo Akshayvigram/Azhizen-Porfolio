@@ -136,7 +136,7 @@ const HeroSection = () => {
   ></div>
 
   {/* Ariz Image Above the Gradient (z-10) */}
-  <div className="absolute bottom-0 right-0 z-10 w-[180px] sm:w-[220px] md:w-[250px] lg:w-[280px] xl:w-[320px] 2xl:w-[360px] mb-35 mr-2">
+<div className="absolute bottom-0 right-0 z-0 w-[280px] sm:w-[320px] md:w-[380px] lg:w-[440px] xl:w-[500px] 2xl:w-[560px] mb-15 mr-10">
     <img src={Ariz} alt="Ariz" className="w-full h-auto object-contain" />
   </div>
 </div>
