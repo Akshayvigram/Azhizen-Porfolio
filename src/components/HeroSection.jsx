@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { db } from './firebase';
 import { collection, addDoc } from 'firebase/firestore';
+import Ariz from '../assets/Ariz.png';
 
 const HeroSection = () => {
   const handleContactClick = () => {
@@ -123,16 +124,21 @@ const HeroSection = () => {
             </button>
           </div>
         </div>
+  {/* Blue Gradient Background (z-0) */}
+  <div
+    className="absolute bottom-0 right-0 w-1/3 sm:w-1/4 lg:w-1/5 2xl:w-1/6 h-full bg-gradient-to-br from-[#017FB8] to-[#01ABD3] blur-[35.5px] opacity-25 z-0 ipad-half-circle"
+    style={{
+      borderRadius: '591.69px 0 0 591.69px',
+      bottom: '-1%',
+      overflow: 'hidden',
+    }}
+  ></div>
 
-        <div
-          className="absolute bottom-0 right-0 w-1/3 sm:w-1/4 lg:w-1/5 2xl:w-1/6 h-full bg-gradient-to-br from-[#017FB8] to-[#01ABD3] blur-[35.5px] opacity-25 z-0 ipad-half-circle"
-          style={{
-            borderRadius: '591.69px 0 0 591.69px',
-            bottom: '-1%',
-            overflow: 'hidden',
-          }}
-        ></div>
-      </div>
+  {/* Ariz Image Above the Gradient (z-10) */}
+  <div className="absolute bottom-0 right-0 z-10 w-[180px] sm:w-[220px] md:w-[250px] lg:w-[280px] xl:w-[320px] 2xl:w-[360px] mb-35 mr-2">
+    <img src={Ariz} alt="Ariz" className="w-full h-auto object-contain" />
+  </div>
+</div>
 
       {/* Inline CSS to fix scrollbar issue */}
       <style>

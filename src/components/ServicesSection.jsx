@@ -26,35 +26,40 @@ const ServicesSection = () => {
           SERVICES WE PROVIDE
         </h2>
         
-        {/* Mobile View */}
-        <div className="md:hidden space-y-6">
-          {services.map((service) => (
-            <div key={service.id} className="text-center mx-auto w-full max-w-xs">
-              <div
-                className="relative rounded-lg shadow-lg w-full h-56 sm:h-64 cursor-pointer overflow-hidden"
-                onClick={() => toggleContent(service.id)}
-                aria-label={`Toggle ${service.title} description`}
-              >
-                <img
-                  src={service.img}
-                  className="absolute inset-0 w-full h-full object-cover rounded-lg"
-                  alt={service.title}
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-80 rounded-lg"></div>
-                <div className="absolute bottom-0 left-0 w-full bg-gradient-to-b from-transparent to-black text-white text-base sm:text-lg font-semibold py-3 text-center rounded-b-lg">
-                  {service.title}
-                </div>
-              </div>
-              <div
-                className={`mt-4 transition-all duration-500 ease-in-out text-center mx-auto w-full ${
-                  visibleContent === service.id ? "opacity-100 max-h-40" : "opacity-0 max-h-0 overflow-hidden"
-                }`}
-              >
-                <p className="text-black text-sm sm:text-base leading-relaxed">{service.description}</p>
-              </div>
-            </div>
-          ))}
+{/* Mobile View */}
+<div className="md:hidden space-y-3">
+  {services.map((service) => (
+    <div key={service.id} className="text-center mx-auto w-full max-w-xs">
+      <div
+        className="relative rounded-lg shadow-lg w-full h-56 sm:h-64 cursor-pointer overflow-hidden"
+        onClick={() => toggleContent(service.id)}
+        aria-label={`Toggle ${service.title} description`}
+      >
+        <img
+          src={service.img}
+          className="absolute inset-0 w-full h-full object-cover rounded-lg"
+          alt={service.title}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-80 rounded-lg"></div>
+        <div className="absolute bottom-0 left-0 w-full bg-gradient-to-b from-transparent to-black text-white text-base sm:text-lg font-semibold py-3 text-center rounded-b-lg">
+          {service.title}
         </div>
+      </div>
+
+      <div
+        className={`mt-2 transition-all duration-500 ease-in-out text-center mx-auto w-full ${
+          visibleContent === service.id
+            ? "opacity-100 max-h-40"
+            : "opacity-0 max-h-0 overflow-hidden"
+        }`}
+      >
+        <p className="text-black text-sm sm:text-base leading-relaxed">
+          {service.description}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
 
         {/* Tablet, Desktop, and 4K View */}
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 2xl:gap-8 w-full mx-auto">
