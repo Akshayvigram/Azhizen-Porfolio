@@ -207,6 +207,7 @@ const FooterSection = () => {
     azhizensolutions@gmail.com
     <br />
     Phone: +91 9750603988
+    Phone: +91 7010682506
   </p>
   <button
     className="text-white px-6 2xl:px-8 py-3 2xl:py-4 rounded-full transition-all hover:brightness-110 w-[150px] 2xl:w-[180px] text-sm md:text-xs 2xl:text-base"

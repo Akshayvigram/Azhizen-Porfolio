@@ -206,6 +206,10 @@ function ContactForm() {
                 <img src={icon6} alt="Phone Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
                 <a href="tel:+919750603988" className="underline text-sm lg:text-base 2xl:text-lg">+91 9750603988</a>
               </li>
+               <li className="flex items-center mt-2 2xl:mt-3">
+                <img src={icon6} alt="Phone Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
+                <a href="tel:+919750603988" className="underline text-sm lg:text-base 2xl:text-lg">+91 7010682506</a>
+              </li>
 
               <h2 className="text-xl lg:text-2xl 2xl:text-3xl font-semibold mt-6 2xl:mt-8">Visit us</h2>
               <p className="text-gray-500 mt-2 2xl:mt-3 text-sm lg:text-base 2xl:text-lg">
