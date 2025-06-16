@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Kameron:wght@400..700&family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 :root {
-  font-family: "Kameron", serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  /* Removed hardcoded color and background */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -19,7 +17,7 @@ body {
   box-sizing: border-box;
 }
 
-/* Utility override (use with caution – Tailwind already provides these) */
+/* Utility overrides (use with caution – Tailwind already provides these) */
 .bg-white {
   background-color: #ffffff;
   color: #000000;
@@ -53,10 +51,8 @@ input, textarea, select {
 
 button {
   color: #ffffff;
-  background-color: #1f2937; /* Optional */
+  background-color: #1f2937;
 }
-
-/* ❌ Removed prefers-color-scheme overrides – Tailwind handles this via `dark:` classes */
 
 /* Swiper styles */
 .swiper-slide {
@@ -73,28 +69,18 @@ button {
   opacity: 1;
 }
 
+/* Consolidated media query for iPad-specific styles */
 @media (min-width: 768px) and (max-width: 1023px) {
   .ipad-half-circle {
-    height: 200px !important; /* Adjust based on desired size */
+    height: 200px !important;
     border-top-left-radius: 200px !important;
     border-bottom-left-radius: 200px !important;
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
+    top: 50px !important;
   }
-}
 
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .ipad-half-circle {
-    top: 50px !important; /* Adjust this value to control how far down it moves */
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
   .ipad-tight-spacing {
-    margin-top: -40px !important; /* Reduce spacing between sections */
+    margin-top: -40px !important;
   }
 }
-
-
-
