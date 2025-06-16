@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { db } from './firebase';
 import { collection, addDoc } from 'firebase/firestore';
 import Ariz from '../assets/Ariz.png';
+import '../App.css';
 
 const HeroSection = () => {
   const handleContactClick = () => {
@@ -93,8 +94,28 @@ const HeroSection = () => {
     </button>
   </div>
 </div>
-
-
+      {/* Mobile View */}
+        <div className="block mt-15 sm:hidden px-4 pt-4 pb-1 text-center">
+        <div className="max-w-md mx-auto">
+          <h1
+            className="text-2xl font-bold text-black leading-tight"
+            style={{ fontFamily: "Poppins, sans-serif" }}
+          >
+            <span className="text-blue-500" style={{ color: "#00B4D9" }}>Let's</span> Pioneer.Produce.Propel <br />
+            Innovate with <span className="text-blue-500" style={{ color: "#00B4D9" }}>Azhizen</span>
+          </h1>
+          <p className="text-xs text-gray-600 mb-3 px-2">
+            Master in-demand skills with expert-led training in MedTech, DeepTech, EduTech, and beyond.
+            Kickstart your career journey with innovation, insight, and industry excellence.
+          </p>
+          <button
+            className="rounded bg-gradient-to-br from-[#0078B4] to-[#00B4D9] text-white px-4 py-2 text-xs hover:brightness-110"
+            onClick={handleCareerClick}
+          >
+            Get Started
+          </button>
+        </div>
+      </div>
       {/* Tablet, Desktop, and 4K View */}
       <div className="hidden sm:block bg-white h-auto lg:min-h-auto items-center px-4 sm:px-6 lg:px-8 2xl:px-12 relative py-15 sm:py-12 lg:py-22 mt-30">
         <div className="w-full sm:w-3/4 lg:w-1/2">
@@ -133,37 +154,44 @@ const HeroSection = () => {
             </button>
           </div>
         </div>
-  {/* Blue Gradient Background (z-0) */}
-  <div
-    className="absolute bottom-0 right-0 w-1/3 sm:w-1/4 lg:w-1/5 2xl:w-1/6 h-full bg-gradient-to-br from-[#017FB8] to-[#01ABD3] blur-[35.5px] opacity-25 z-0 ipad-half-circle"
-    style={{
-      borderRadius: '591.69px 0 0 591.69px',
-      bottom: '-1%',
-      overflow: 'hidden',
-    }}
-  ></div>
+{/* Blue Gradient Background (z-0) */}
+<div
+  className="hidden sm:block absolute bottom-0 right-0 w-1/3 sm:w-1/4 lg:w-1/5 2xl:w-1/6 h-full bg-gradient-to-br from-[#017FB8] to-[#01ABD3] blur-[35.5px] opacity-25 z-0 ipad-half-circle"
+  style={{
+    borderRadius: '591.69px 0 0 591.69px',
+    bottom: '-1%',
+    overflow: 'hidden',
+  }}
+></div>
 
-  {/* Ariz Image Above the Gradient (z-10) */}
-<div className="absolute bottom-0 right-0 z-0 w-[280px] sm:w-[320px] md:w-[380px] lg:w-[440px] xl:w-[500px] 2xl:w-[560px] mb-15 mr-10">
-    <img src={Ariz} alt="Ariz" className="w-full h-auto object-contain" />
-  </div>
+{/* Ariz Image */}
+<div className="hidden sm:block absolute bottom-0 right-0 z-0 w-[280px] sm:w-[320px] md:w-[380px] lg:w-[440px] xl:w-[500px] 2xl:w-[560px] mb-15 mr-10">
+  <img
+    src={Ariz}
+    alt="Ariz"
+    className="w-full h-auto object-contain animate-float"
+  />
 </div>
+
+
+      </div>
 
       {/* Inline CSS to fix scrollbar issue */}
       <style>
-        {`
-          html, body {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            overflow-y: auto;
-          }
-          .bg-white.w-full.overflow-x-hidden {
-            min-height: 100vh;
-            overflow-y: hidden;
-          }
-        `}
-      </style>
+  {`
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    .bg-white.w-full.overflow-x-hidden {
+      min-height: 40vh;
+      overflow: hidden;
+    }
+  `}
+</style>
+
     </div>
   );
 };
