@@ -68,6 +68,32 @@ const HeroSection = () => {
 
   return (
     <div className="bg-white w-full overflow-x-hidden">
+{/* Mobile View */}
+<div className="block sm:hidden px-4 py-4 mt-16 text-center">
+  <div className="max-w-md mx-auto">
+    <h1
+      className="text-2xl font-bold text-black leading-tight mb-2"
+      style={{ fontFamily: "Poppins, sans-serif" }}
+    >
+      <span className="text-blue-500" style={{ color: "#00B4D9" }}>Let's</span> Pioneer.Produce.Propel <br />
+      Innovate with <span className="text-blue-500" style={{ color: "#00B4D9" }}>Azhizen</span>
+    </h1>
+    <p className="text-xs text-gray-600 mb-3 px-2">
+      Innovate with Azhizen
+      We're a product-driven tech company redefining what's possible.
+      From smart software to AI-powered hardware, we build bold solutions.
+      Our mission? Solve real-world problems with intelligence and precision.
+      Step in, stand out, and shape the future with us.
+
+    </p>
+    <button
+      className="rounded bg-gradient-to-br from-[#0078B4] to-[#00B4D9] text-white px-4 py-2 text-xs hover:brightness-110"
+      onClick={handleCareerClick}
+    >
+      Get Started
+    </button>
+  </div>
+</div>
       {/* Mobile View */}
         <div className="block mt-15 sm:hidden px-4 pt-4 pb-1 text-center">
         <div className="max-w-md mx-auto">
@@ -90,9 +116,8 @@ const HeroSection = () => {
           </button>
         </div>
       </div>
-
       {/* Tablet, Desktop, and 4K View */}
-      <div className="hidden sm:block bg-white h-auto lg:min-h-auto flex items-center px-4 sm:px-6 lg:px-8 2xl:px-12 relative py-15 sm:py-12 lg:py-22 mt-30">
+      <div className="hidden sm:block bg-white h-auto lg:min-h-auto items-center px-4 sm:px-6 lg:px-8 2xl:px-12 relative py-15 sm:py-12 lg:py-22 mt-30">
         <div className="w-full sm:w-3/4 lg:w-1/2">
           <h1
             className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-black leading-tight mb-6 sm:ml-4 lg:ml-10 2xl:ml-12"
@@ -104,8 +129,12 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-gray-600 mb-8 max-w-sm sm:max-w-md lg:max-w-lg 2xl:max-w-xl text-sm sm:text-base lg:text-lg 2xl:text-xl sm:ml-4 lg:ml-10 2xl:ml-12">
-            Master in-demand skills with expert-led training in MedTech, DeepTech, EduTech, and beyond.
-            Kickstart your career journey with innovation, insight, and industry excellence.
+            Innovate with Azhizen
+            We're a product-driven tech company redefining what's possible.
+            From smart software to AI-powered hardware, we build bold solutions.
+            Our mission? Solve real-world problems with intelligence and precision.
+            Step in, stand out, and shape the future with us.
+
           </p>
 
           <div className="flex space-x-4 sm:ml-4 lg:ml-10 2xl:ml-12">
