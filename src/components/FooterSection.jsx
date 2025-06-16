@@ -207,7 +207,7 @@ const FooterSection = () => {
     azhizensolutions@gmail.com
     <br />
     Phone: +91 9750603988
-    Phone: +91 7010682506
+    Phone:+91  7010682506
   </p>
   <button
     className="text-white px-6 2xl:px-8 py-3 2xl:py-4 rounded-full transition-all hover:brightness-110 w-[150px] 2xl:w-[180px] text-sm md:text-xs 2xl:text-base"
@@ -313,6 +313,27 @@ const FooterSection = () => {
       </div>
       <div className="text-center text-gray-500 mt-4 sm:mt-6 text-sm md:text-xs 2xl:text-base">
         © 2025 Azhizen Solution. All Rights Reserved.
+      </div>
+       <div className="mt-3 space-x-4 text-center">
+      <a
+        href="https://academy.azhizen.com"
+        className="text-azhizen-lightPurple hover:underline"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Azhizen Academy
+      </a>
+
+
+      <span className="text-azhizen-neutralGray">|</span>
+      <a
+        href="https://media.azhizen.com"
+        className="text-azhizen-lightPurple hover:underline"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Azhizen Media
+      </a>
       </div>
     </footer>
   );
