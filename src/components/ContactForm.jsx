@@ -25,32 +25,25 @@ function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submitting data:', formData);
-  
+
     try {
       // 1. Firestore
       const docRef = await addDoc(collection(db, 'contactForms'), {
         ...formData,
         timestamp: new Date(),
       });
-      console.log('Document written with ID:', docRef.id);
-      alert("Message Sent Successfully!");
-      console.log('Document written with ID (Firestore):', docRef.id);
-  
+      console.log('Firestore document written with ID:', docRef.id);
+
       // 2. Realtime Database
       const contactFormRef = ref(realtimeDb, 'contactForms');
-    
-      // Push data to Realtime DB
       const newContactFormRef = push(contactFormRef);
-      await push(newContactFormRef, {
+      await set(newContactFormRef, {
         ...formData,
-        timestamp: new Date().toISOString(), // Add timestamp
+        timestamp: new Date().toISOString(),
       });
-  
-      console.log('Data pushed to Realtime Database with key:', newContactFormRef.key);
+      console.log('Realtime DB data saved with key:', newContactFormRef.key);
+
       alert('Message Sent Successfully!');
-      
-      // Reset form
       setFormData({
         firstName: '',
         lastName: '',
@@ -59,110 +52,95 @@ function ContactForm() {
         message: '',
       });
     } catch (error) {
-      console.error('Error adding document:', error.message, error.code);
+      console.error('Submission failed:', error);
       alert('Submission Failed: ' + error.message);
     }
   };
 
   return (
     <div className="bg-white">
-      {/* SYSTEM VIEW (Desktop) */}
-      <div className="hidden md:block p-8 lg:p-12 2xl:p-16 pt-16 2xl:pt-20 mt-20 2xl:mt-24 max-w-7xl 2xl:max-w-[1920px] mx-auto">
-        {/* Heading */}
-        <div className="text-center mb-8 2xl:mb-12">
-          <h1 className="text-5xl lg:text-6xl 2xl:text-7xl font-poppins font-bold text-black">
-            Contact our <span style={{ color: "#00B4D9" }}>Team</span>
+      {/* DESKTOP VIEW */}
+      <div className="hidden md:block p-8 lg:p-12 2xl:p-16 pt-16 mt-20 max-w-7xl mx-auto">
+        <div className="text-center mb-8">
+          <h1 className="text-5xl font-bold">
+            Contact our <span className="text-[#00B4D9]">Team</span>
           </h1>
-          <p className="text-gray-500 mt-8 2xl:mt-10 text-base lg:text-lg 2xl:text-xl">
-            Any questions or remarks? Just leave a message!
-          </p>
+          <p className="text-gray-500 mt-8">Any questions or remarks? Just leave a message!</p>
         </div>
 
-        {/* Content */}
         <div className="flex flex-col md:flex-row justify-center items-start">
-          {/* Form */}
-          <div className="md:w-2/ p-4">
-            <form className="mt-4 space-y-3 2xl:space-y-5" onSubmit={handleSubmit}>
-              {/* First & Last Name */}
-              <div className="flex space-x-8">
+          <div className="md:w-2/5 p-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <div className="flex space-x-4">
                 <div className="w-1/2">
-                  <label className="block text-gray-700 text-sm lg:text-base 2xl:text-lg mb-2 font-bold">First Name</label>
+                  <label className="block text-sm font-bold">First Name</label>
                   <input
                     type="text"
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="w-full p-1.5 lg:p-2 2xl:p-2.5 border border-gray-900 rounded text-sm lg:text-base 2xl:text-lg"
+                    className="w-full p-2 border rounded"
                     required
                   />
                 </div>
                 <div className="w-1/2">
-                  <label className="block text-gray-700 text-sm lg:text-base 2xl:text-lg mb-2 font-bold">Last Name</label>
+                  <label className="block text-sm font-bold">Last Name</label>
                   <input
                     type="text"
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
-                    className="w-full p-1.5 lg:p-2 2xl:p-2.5 border border-gray-900 rounded text-sm lg:text-base 2xl:text-lg"
+                    className="w-full p-2 border rounded"
                     required
                   />
                 </div>
               </div>
 
-              {/* Email */}
               <div>
-                <label className="block text-gray-700 text-sm lg:text-base 2xl:text-lg mb-2 font-bold">Email</label>
+                <label className="block text-sm font-bold">Email</label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full p-1.5 lg:p-2 2xl:p-2.5 border border-gray-900 rounded text-sm lg:text-base 2xl:text-lg"
+                  className="w-full p-2 border rounded"
                   required
                 />
               </div>
 
-              {/* Country & Phone */}
-              <div className="w-full">
-                <label className="block text-gray-700 text-sm lg:text-base 2xl:text-lg mb-2 font-bold">Country & Phone Number</label>
-                <div className="flex space-x-3">
-                  <div className="w-1/4">
-                    <select className="w-full p-1.5 lg:p-2 2xl:p-2.5 border border-gray-900 rounded text-sm lg:text-base 2xl:text-lg">
-                      <option>IND</option>
-                    </select>
-                  </div>
-                  <div className="w-3/4">
-                    <input
-                      type="text"
-                      name="phoneNumber"
-                      value={formData.phoneNumber}
-                      onChange={handleChange}
-                      className="w-full p-1.5 lg:p-2 2xl:p-2.5 border border-gray-900 rounded text-sm lg:text-base 2xl:text-lg"
-                      placeholder="Phone Number"
-                    />
-                  </div>
+              <div>
+                <label className="block text-sm font-bold">Country & Phone Number</label>
+                <div className="flex space-x-2">
+                  <select className="p-2 border rounded">
+                    <option>IND</option>
+                  </select>
+                  <input
+                    type="text"
+                    name="phoneNumber"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
+                    placeholder="Phone Number"
+                    className="flex-1 p-2 border rounded"
+                  />
                 </div>
               </div>
 
-              {/* Message */}
               <div>
-                <label className="block text-gray-700 text-sm lg:text-base 2xl:text-lg mb-2 font-bold">Message</label>
+                <label className="block text-sm font-bold">Message</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Leave a message"
-                  className="w-full p-1.5 lg:p-2 2xl:p-2.5 border border-gray-900 rounded h-24 2xl:h-32 text-sm lg:text-base 2xl:text-lg"
+                  className="w-full p-2 border rounded h-24"
                   required
-                ></textarea>
+                />
               </div>
 
-              {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full p-1.5 lg:p-2 2xl:p-2.5 text-white rounded text-sm lg:text-base 2xl:text-lg"
-                style={{ background: "linear-gradient(135deg, #0078B4 0%, #00B4D9 100%)" }}
-                aria-label="Send message"
+                className="w-full p-2 text-white rounded"
+                style={{ background: 'linear-gradient(135deg, #0078B4 0%, #00B4D9 100%)' }}
               >
                 Send Message
               </button>
@@ -170,160 +148,130 @@ function ContactForm() {
           </div>
 
           {/* Contact Info */}
-          <div className="ml-20 flex justify-end p-4">
-            <div className="md:w-full">
-              <h2 className="text-xl lg:text-2xl 2xl:text-3xl font-semibold">Chat with us</h2>
-              <p className="text-gray-500 mt-2 2xl:mt-3 text-sm lg:text-base 2xl:text-lg">
-                Speak to our friendly team via live chat
-              </p>
-              <ul className="mt-4 2xl:mt-6 space-y-2 2xl:space-y-3">
-                {/*
-<li className="flex items-center">
-  <img src={icon1} alt="Chat Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
-  <span className="underline text-sm lg:text-base 2xl:text-lg">Start a live chat</span>
-</li>
-*/}
-
-                <li className="flex items-center">
-                  <img src={icon2} alt="Email Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
-                  <a href="mailto:azhizensolutions@gmail.com" className="underline text-sm lg:text-base 2xl:text-lg">Shoot us on Email</a>
-                </li>
-                <li className="flex items-center">
-                  <img src={icon3} alt="LinkedIn Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
-                  <a href="https://www.linkedin.com/company/azhizensolutions/" target="_blank" rel="noopener noreferrer" className="underline text-sm lg:text-base 2xl:text-lg">Message us on LinkedIn</a>
-                </li>
-                <li className="flex items-center">
-                  <img src={icon4} alt="Instagram Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
-                  <a href="https://www.instagram.com/azhizensolutions" target="_blank" rel="noopener noreferrer" className="underline text-sm lg:text-base 2xl:text-lg">Message us on Instagram</a>
-                </li>
-              </ul>
-
-              <h2 className="text-xl lg:text-2xl 2xl:text-3xl font-semibold mt-6 2xl:mt-8">Call us</h2>
-              <p className="text-gray-500 mt-2 2xl:mt-3 text-sm lg:text-base 2xl:text-lg">
-                Call our team Mon - Fri from 8 AM to 6 PM
-              </p>
-              <li className="flex items-center mt-2 2xl:mt-3">
-                <img src={icon6} alt="Phone Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
-                <a href="tel:+919750603988" className="underline text-sm lg:text-base 2xl:text-lg">+91 9750603988</a>
-              </li>
-               <li className="flex items-center mt-2 2xl:mt-3">
-                <img src={icon6} alt="Phone Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
-                <a href="tel:+919750603988" className="underline text-sm lg:text-base 2xl:text-lg">+91 7010682506</a>
-              </li>
-
-              <h2 className="text-xl lg:text-2xl 2xl:text-3xl font-semibold mt-6 2xl:mt-8">Visit us</h2>
-              <p className="text-gray-500 mt-2 2xl:mt-3 text-sm lg:text-base 2xl:text-lg">
-                Chat to us in person at our company
-              </p>
-              <li className="flex items-center mt-2 2xl:mt-3">
-                <img src={icon5} alt="Location Icon" className="mr-2 w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6" />
-                <a
-                  href="https://www.google.com/maps/place/Azhizen+Solutions+Pvt+Ltd.,/@11.3591653,77.8266921,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba965003111cd9d:0xade9181c8a953dcf!8m2!3d11.3591653!4d77.8266921!16s%2Fg%2F11x5__hc3_?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline text-sm lg:text-base 2xl:text-lg"
-                >
-                  Tiruchengode, Namakkal
+          <div className="ml-12 p-4">
+            <h2 className="text-2xl font-semibold">Chat with us</h2>
+            <p className="text-gray-500 mt-2">Speak to our friendly team via live chat</p>
+            <ul className="mt-4 space-y-2">
+              {/* uncomment "Start a live chat" if you add chat */}
+              <li className="flex items-center">
+                <img src={icon2} alt="Email" className="mr-2 w-5 h-5" />
+                <a href="mailto:azhizensolutions@gmail.com" className="underline text-base">
+                  Shoot us on Email
                 </a>
               </li>
-            </div>
+              <li className="flex items-center">
+                <img src={icon3} alt="LinkedIn" className="mr-2 w-5 h-5" />
+                <a href="https://www.linkedin.com/company/azhizensolutions/" target="_blank" rel="noopener noreferrer" className="underline text-base">
+                  Message us on LinkedIn
+                </a>
+              </li>
+              <li className="flex items-center">
+                <img src={icon4} alt="Instagram" className="mr-2 w-5 h-5" />
+                <a href="https://www.instagram.com/azhizensolutions" target="_blank" rel="noopener noreferrer" className="underline text-base">
+                  Message us on Instagram
+                </a>
+              </li>
+            </ul>
+
+            <h2 className="text-2xl font-semibold mt-6">Call us</h2>
+            <p className="text-gray-500 mt-2">Mon–Fri, 8 AM to 6 PM</p>
+            {[ '+919750603988', '+917010682506' ].map((phone) => (
+              <li key={phone} className="flex items-center mt-2">
+                <img src={icon6} alt="Phone" className="mr-2 w-5 h-5" />
+                <a href={`tel:${phone}`} className="underline text-base">{phone}</a>
+              </li>
+            ))}
+
+            <h2 className="text-2xl font-semibold mt-6">Visit us</h2>
+            <p className="text-gray-500 mt-2">Chat in person at our company</p>
+            <li className="flex items-center mt-2">
+              <img src={icon5} alt="Location" className="mr-2 w-5 h-5" />
+              <a
+                href="https://www.google.com/maps/place/Azhizen+Solutions+Pvt+Ltd."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline text-base"
+              >
+                Tiruchengode, Namakkal
+              </a>
+            </li>
           </div>
         </div>
       </div>
 
-      {/* MOBILE VIEW - FORM ONLY */}
-      <div className="block md:hidden p-4 xs:p-4 sm:p-6 bg-white rounded-lg shadow mt-30 sm:mt-32 w-full overflow-visible mx-auto max-w-sm sm:max-w-md">
-        <div className="max-w-sm sm:max-w-md mx-auto w-full px-2">
-          <h2 className="text-lg xs:text-base sm:text-xl font-bold text-black mb-6 sm:mb-8 text-center">
-            Contact Our <span style={{ color: "#00B4D9" }}>Team</span>
-          </h2>
-
-          <form className="space-y-3 sm:space-y-4" onSubmit={handleSubmit}>
-            {/* First & Last Name */}
-            <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0">
-              <div className="w-full sm:w-1/2">
-                <label className="block text-gray-700 text-xs sm:text-sm mb-2 font-bold">First Name</label>
+      {/* MOBILE VIEW */}
+      <div className="block md:hidden p-4 bg-white rounded shadow mt-8 max-w-md mx-auto">
+        <h2 className="text-center text-xl font-bold mb-6">
+          Contact Our <span className="text-[#00B4D9]">Team</span>
+        </h2>
+        <form className="space-y-4" onSubmit={handleSubmit}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {['firstName', 'lastName'].map((field) => (
+              <div key={field}>
+                <label className="block text-xs font-bold">
+                  {field === 'firstName' ? 'First Name' : 'Last Name'}
+                </label>
                 <input
                   type="text"
-                  name="firstName"
-                  value={formData.firstName}
+                  name={field}
+                  value={formData[field]}
                   onChange={handleChange}
-                  className="w-full p-1.5 sm:p-2 border border-gray-900 rounded text-xs sm:text-sm"
+                  className="w-full p-2 border rounded text-sm"
                   required
                 />
               </div>
-              <div className="w-full sm:w-1/2">
-                <label className="block text-gray-700 text-xs sm:text-sm mb-2 font-bold">Last Name</label>
-                <input
-                  type="text"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  className="w-full p-1.5 sm:p-2 border border-gray-900 rounded text-xs sm:text-sm"
-                  required
-                />
-              </div>
-            </div>
+            ))}
+          </div>
 
-            {/* Email */}
-            <div>
-              <label className="block text-gray-700 text-xs sm:text-sm mb-2 font-bold">Email</label>
+          <div>
+            <label className="block text-xs font-bold">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full p-2 border rounded text-sm"
+              required
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label className="block text-xs font-bold">Country & Phone Number</label>
+            <div className="flex gap-2">
+              <select className="p-2 border rounded text-sm">
+                <option>IND</option>
+              </select>
               <input
-                type="email"
-                name="email"
-                value={formData.email}
+                type="text"
+                name="phoneNumber"
+                value={formData.phoneNumber}
                 onChange={handleChange}
-                className="w-full p-1.5 sm:p-2 border border-gray-900 rounded text-xs sm:text-sm"
-                required
+                placeholder="Phone Number"
+                className="flex-1 p-2 border rounded text-sm"
               />
             </div>
+          </div>
 
-            {/* Country & Phone */}
-            <div className="w-full">
-              <label className="block text-gray-700 text-xs sm:text-sm mb-2 font-bold">Country & Phone Number</label>
-              <div className="flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0">
-                <div className="w-full sm:w-1/4">
-                  <select className="w-full p-1.5 sm:p-2 border border-gray-900 rounded text-xs sm:text-sm">
-                    <option>IND</option>
-                  </select>
-                </div>
-                <div className="w-full sm:w-3/4">
-                  <input
-                    type="text"
-                    name="phoneNumber"
-                    value={formData.phoneNumber}
-                    onChange={handleChange}
-                    className="w-full p-1.5 sm:p-2 border border-gray-900 rounded text-xs sm:text-sm"
-                    placeholder="Phone Number"
-                  />
-                </div>
-              </div>
-            </div>
+          <div>
+            <label className="block text-xs font-bold">Message</label>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Leave a message"
+              className="w-full p-2 border rounded h-24 text-sm"
+              required
+            />
+          </div>
 
-            {/* Message */}
-            <div>
-              <label className="block text-gray-700 text-xs sm:text-sm mb-2 font-bold">Message</label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Leave a message"
-                className="w-full p-1.5 sm:p-2 border border-gray-900 rounded h-24 sm:h-28 text-xs sm:text-sm"
-                required
-              ></textarea>
-            </div>
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="w-full p-1.5 sm:p-2 text-white rounded text-xs sm:text-sm"
-              style={{ background: "linear-gradient(135deg, #0078B4 0%, #00B4D9 100%)" }}
-              aria-label="Send message"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
+          <button
+            type="submit"
+            className="w-full p-2 text-white rounded text-sm"
+            style={{ background: 'linear-gradient(135deg, #0078B4 0%, #00B4D9 100%)' }}
+          >
+            Send Message
+          </button>
+        </form>
       </div>
     </div>
   );
