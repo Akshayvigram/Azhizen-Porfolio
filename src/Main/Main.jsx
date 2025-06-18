@@ -3,7 +3,7 @@ import HeroSection from '../components/HeroSection';
 import ServicesSection from '../components/ServicesSection';
 import AboutUsSection from '../components/AboutUsSection';
 import CommunityPartner from '../components/CommunityPartner';
-import TeamPage from '../components/TeamPage';
+// import TeamPage from '../components/TeamPage';
 
 const Main = () => {
   return (
@@ -15,8 +15,8 @@ const Main = () => {
           <ServicesSection />
         </section>
         <AboutUsSection />
-        <TeamPage/>
-        <CommunityPartner/>
+        {/* <TeamPage /> */}
+        <CommunityPartner />
       </div>
     </div>
   );
