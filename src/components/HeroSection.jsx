@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { db } from './firebase';
 import { collection, addDoc } from 'firebase/firestore';
-import Ariz from '../assets/Ariz.png';
 import '../App.css';
 
 const HeroSection = () => {
@@ -167,7 +166,7 @@ const HeroSection = () => {
 {/* Ariz Image */}
 <div className="hidden sm:block absolute bottom-0 right-0 z-0 w-[280px] sm:w-[320px] md:w-[380px] lg:w-[440px] xl:w-[500px] 2xl:w-[560px] mb-15 mr-10">
   <img
-    src={Ariz}
+    src="https://portfolio-assest.s3.us-east-1.amazonaws.com/Ariz.png"
     alt="Ariz"
     className="w-full h-auto object-contain animate-float"
   />

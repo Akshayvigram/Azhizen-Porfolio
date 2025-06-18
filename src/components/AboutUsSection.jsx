@@ -1,5 +1,4 @@
 import React from "react";
-import team1 from '../assets/team1.png';
 
 const AboutUsSection = () => {
   return (
@@ -63,7 +62,7 @@ const AboutUsSection = () => {
             {/* Image */}
             <div className="relative w-full h-64 sm:h-80 lg:h-full">
               <img
-                src={team1}
+                src="https://portfolio-assest.s3.us-east-1.amazonaws.com/team1.png"
                 className="w-full h-full object-cover rounded-lg shadow-lg"
                 alt="Team"
               />

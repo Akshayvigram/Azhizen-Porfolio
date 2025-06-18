@@ -80,14 +80,14 @@ const JobPosting = ({ job }) => {
             <div className="flex gap-4 sm:gap-6 w-full lg:w-[500px] mt-6 lg:mt-0">
               <div className="w-[120px] h-[160px] sm:w-[200px] sm:h-[280px] overflow-hidden rounded-lg">
                 <img
-                  src="/product-design-process.png"
+                  src="https://portfolio-assest.s3.us-east-1.amazonaws.com/product-design-process.png"
                   alt="Visual"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="mt-6 sm:mt-8 w-[160px] sm:w-[210px] h-[210px] sm:h-[280px] overflow-hidden rounded-lg">
                 <img
-                  src="/design-team.png"
+                  src="https://portfolio-assest.s3.us-east-1.amazonaws.com/design-team.png"
                   alt="Visual"
                   className="w-full h-full object-cover"
                 />
