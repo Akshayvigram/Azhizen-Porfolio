@@ -94,28 +94,7 @@ const HeroSection = () => {
     </button>
   </div>
 </div>
-      {/* Mobile View */}
-        <div className="block mt-15 sm:hidden px-4 pt-4 pb-1 text-center">
-        <div className="max-w-md mx-auto">
-          <h1
-            className="text-2xl font-bold text-black leading-tight"
-            style={{ fontFamily: "Poppins, sans-serif" }}
-          >
-            <span className="text-blue-500" style={{ color: "#00B4D9" }}>Let's</span> Pioneer.Produce.Propel <br />
-            Innovate with <span className="text-blue-500" style={{ color: "#00B4D9" }}>Azhizen</span>
-          </h1>
-          <p className="text-xs text-gray-600 mb-3 px-2">
-            Master in-demand skills with expert-led training in MedTech, DeepTech, EduTech, and beyond.
-            Kickstart your career journey with innovation, insight, and industry excellence.
-          </p>
-          <button
-            className="rounded bg-gradient-to-br from-[#0078B4] to-[#00B4D9] text-white px-4 py-2 text-xs hover:brightness-110"
-            onClick={handleCareerClick}
-          >
-            Get Started
-          </button>
-        </div>
-      </div>
+     
       {/* Tablet, Desktop, and 4K View */}
       <div className="hidden sm:block bg-white h-auto lg:min-h-auto items-center px-4 sm:px-6 lg:px-8 2xl:px-12 relative py-15 sm:py-12 lg:py-22 mt-30">
         <div className="w-full sm:w-3/4 lg:w-1/2">

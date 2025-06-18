@@ -24,29 +24,38 @@ const AboutUsSection = () => {
 
             {/* Desktop View - Keep All 4 Points */}
             <ul className="hidden md:block space-y-4 lg:space-y-6 2xl:space-y-8 text-black max-w-md lg:max-w-lg 2xl:max-w-xl mx-auto lg:mx-0">
+           <li className="flex items-start gap-4 lg:gap-5 2xl:gap-6">
+           <div className="w-3 h-10 2xl:h-12 bg-[#00B4D9]"></div>
+           <span className="text-sm lg:text-base 2xl:text-lg font-normal">
+      Azhizen Solutions is a purpose-led innovation company dedicated to developing impactful technologies and platforms across health tech, agri-tech, edu-tech, and creative media.
+    </span>
+  </li>
+
+              <li className="flex items-start gap-4 lg:gap-5 2xl:gap-6">
+                <div className="w-5 h-10 2xl:h-12 bg-[#00B4D9]"></div>
+                <span className="text-sm lg:text-base 2xl:text-lg">
+                we believe technology should make life better and genuinely help people.With a passionate team of engineers, educators, and creatives, we build meaningful solutions.Every idea we pursue is driven by empathy, bold thinking, and real-world impact
+                </span>
+              </li>
+
+              
               <li className="flex items-start gap-4 lg:gap-5 2xl:gap-6">
                 <div className="w-2 h-10 2xl:h-12 bg-[#00B4D9]"></div>
                 <span className="text-sm lg:text-base 2xl:text-lg">
-                  <b>Driven by Innovation</b> – We bring fresh ideas to life with a forward-thinking approach.
+                  <b>Azhizen Solutions</b> – The parent R&D engine, focused on product development, automation, and problem-solving innovation.
                 </span>
               </li>
               <li className="flex items-start gap-4 lg:gap-5 2xl:gap-6">
-                <div className="w-2 h-10 2xl:h-12 bg-[#00B4D9]"></div>
+                <div className="w-3 h-10 2xl:h-12 bg-[#00B4D9]"></div>
                 <span className="text-sm lg:text-base 2xl:text-lg">
-                  <b>Skilled Professionals</b> – Our team is built on deep knowledge and real-world experience.
+                  <b>Azhizen Academy </b> – Our education wing offering industry-relevant training, cohort programs, and placement-ready skill development for students and professionals.
                 </span>
               </li>
-              <li className="flex items-start gap-4 lg:gap-5 2xl:gap-6">
-                <div className="w-2 h-10 2xl:h-12 bg-[#00B4D9]"></div>
+
+               <li className="flex items-start gap-4 lg:gap-5 2xl:gap-6">
+                <div className="w-3 h-10 2xl:h-12 bg-[#00B4D9]"></div>
                 <span className="text-sm lg:text-base 2xl:text-lg">
-                  <b>End-to-End Support</b> – From planning to delivery, we guide every step of your journey.
-                </span>
-              </li>
-              <li className="flex items-start gap-4 lg:gap-5 2xl:gap-6">
-                <div className="w-2 h-10 2xl:h-12 bg-[#00B4D9]"></div>
-                <span className="text-sm lg:text-base 2xl:text-lg">
-                  <b>Partner-Focused</b> – We believe in building strong, lasting relationships with our clients.
-                </span>
+                  <b>Azhizen Media</b> – The creative arm of Azhizen, dedicated to storytelling, branding, digital marketing, and visual production for businesses and brands.</span>
               </li>
             </ul>
           </div>
