@@ -24,9 +24,10 @@ import Kesav from "../assets/Kesav.png";
 
 
 const teamMembers = [
+  { name: "Mr. Gladson", role: "Developer", team: "Technical Team", image: Gladson },
+  { name: "Mr. Karthick C", role: "Developer", team: "Technical Team", image: Karthick },
   { name: "Mr. Shri Akshay Vigram", role: "Developer", team: "Technical Team", image: Akshay },
   { name: "Ms. Kowsalya J", role: "Developer", team: "Technical Team", image: Kowsalya },
-  { name: "Mr. Karthick C", role: "Developer", team: "Technical Team", image: Karthick },
   { name: "Mr. Vigneshwaran M R", role: "Designer", team: "Technical Team", image: Vignesh },
   { name: "Mr. Kishore", role: "Designer", team: "Technical Team", image: Kishore },
   { name: "Ms. Kiruthika", role: "Designer", team: "Technical Team", image: Kiruthika },
@@ -38,9 +39,8 @@ const teamMembers = [
   { name: "Mr. Hari Prasanth", role: "Developer", team: "Hardware Team", image: Hari },
   { name: "Mr. Bharathkumar", role: "CEO", team: "Executive Team", image: Bharath },
   { name: "Mr. Bose", role: "CEO", team: "Executive Team", image: Bose }, 
-  { name: "Ms. Jeevitha", role: "Developer", team: "Executive Team", image: Jeevitha },
+  { name: "Ms. Jeevitha", role: "CEO", team: "Executive Team", image: Jeevitha },
   { name: "Mr. Nishanth", role: "CEO", team: "Executive Team", image: Nishanth },
-  { name: "Mr. Gladson", role: "CEO", team: "Executive Team", image: Gladson },
   { name: "Mr. Maaran", role: "Developer", team: "Hardware Team", image: Maaran },
   { name: "Mr. Jeeva V", role: "Developer", team: "Technical Team", image: Jeeva },
     { name: "Mr. Boopathy", role: "Developer", team: "Technical Team", image: Boopathy },
