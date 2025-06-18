@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { db } from './firebase';
 import { collection, addDoc } from 'firebase/firestore';
 import '../App.css';
+import ariz from '../assets/ariz.webp';
 
 const HeroSection = () => {
   const handleContactClick = () => {
@@ -166,7 +167,7 @@ const HeroSection = () => {
 {/* Ariz Image */}
 <div className="hidden sm:block absolute bottom-0 right-0 z-0 w-[280px] sm:w-[320px] md:w-[380px] lg:w-[440px] xl:w-[500px] 2xl:w-[560px] mb-15 mr-10">
   <img
-    src="https://portfolio-assest.s3.us-east-1.amazonaws.com/Ariz.png"
+    src={ariz}
     alt="Ariz"
     className="w-full h-auto object-contain animate-float"
   />
