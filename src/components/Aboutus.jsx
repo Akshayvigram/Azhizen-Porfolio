@@ -1,5 +1,8 @@
 import React from "react";
-import ceo from '../assets/ceo.jpeg';
+import ceo from '../assets/ceo.webp';
+import ourstory from '../assets/ourstory.webp';
+import Aboutus1 from '../assets/Aboutus1.webp';
+
 
 const Aboutus = () => {
   return (
@@ -31,7 +34,7 @@ const Aboutus = () => {
               </div>
               <div className="md:w-1/2 flex justify-end">
                 <img
-                  src="https://portfolio-assest.s3.us-east-1.amazonaws.com/Aboutus.png"
+                  src={Aboutus1}
                   alt="About Azhizen"
                   className="rounded-lg w-full max-w-sm lg:max-w-md 2xl:max-w-lg h-auto object-cover"
                 />
@@ -87,7 +90,7 @@ const Aboutus = () => {
               </div>
               <div className="md:w-1/2 flex justify-end">
                 <img
-                  src="https://portfolio-assest.s3.us-east-1.amazonaws.com/ourstory.png"
+                  src={ourstory}
                   alt="Azhizen Team"
                   className="rounded-[20px] w-full max-w-sm lg:max-w-md 2xl:max-w-lg h-80 lg:h-96 2xl:h-[480px] object-cover"
                 />

@@ -1,28 +1,34 @@
 import React, { useState } from "react";
+import service1 from '../assets/service1.webp';
+import service2 from '../assets/service2.webp';
+import service3 from '../assets/service3.webp';
+import service4 from '../assets/service4.webp';
+
+
 
 const services = [
   {
     id: "service1",
     title: "Custom Hardware Design",
-    img: "https://portfolio-assest.s3.us-east-1.amazonaws.com/service1.png",
+    img: service1,
     description: "We deliver advanced hardware prototyping with custom PCB design. Tailored solution for embedded systems and IoT innovation."
   },
   {
     id: "service2",
     title: "Rapid Prototyping",
-    img: "https://portfolio-assest.s3.us-east-1.amazonaws.com/service2.png",
+    img: service2,
     description: "Our team accelerates development with swift prototyping. From concept to functional hardware in record time."
   },
   {
     id: "service3",
     title: "AI/ML & Firmware Integration",
-    img: "https://portfolio-assest.s3.us-east-1.amazonaws.com/service3.png",
+    img: service3,
     description: "We integrate AI/ML capabilities and firmware updates. Smart, adaptable systems built for the future."
   },
   {
     id: "service4",
     title: "Research & Development",
-    img: "https://portfolio-assest.s3.us-east-1.amazonaws.com/service4.png",
+    img: service4,
     description: "Experts in Research and Development employ rigorous methodologies and validation processes."
   }
 ];
