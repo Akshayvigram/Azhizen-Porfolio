@@ -200,7 +200,7 @@ function ContactForm() {
       </div>
 
       {/* MOBILE VIEW */}
-      <div className="block md:hidden p-4 bg-white rounded shadow mt-8 max-w-md mx-auto">
+      <div className="block md:hidden p-4 bg-white rounded shadow mt-28 max-w-md mx-auto">
         <h2 className="text-center text-xl font-bold mb-6">
           Contact Our <span className="text-[#00B4D9]">Team</span>
         </h2>

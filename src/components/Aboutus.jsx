@@ -112,7 +112,7 @@ const Aboutus = () => {
           <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
             Welcome to Azhizen, where innovation meets excellence! Founded with a vision to revolutionize biomedical and engineering solutions, we are dedicated to R&D, manufacturing, and cutting-edge product development. Our expertise spans across biomedical devices, medical technology, animal husbandry machines, AI/ML, edutech, and green tech. Whether it’s crafting advanced healthcare solutions, developing automation systems, or offering high-quality visual and design services, we are committed to transforming ideas into reality.
           </p>
-          <img src="/Aboutus1.png" alt="About Azhizen" className="rounded-lg max-w-[250px] sm:max-w-[300px] mx-auto mt-3 sm:mt-4 object-cover" />
+          <img src={Aboutus1} alt="About Azhizen" className="rounded-lg max-w-[250px] sm:max-w-[300px] mx-auto mt-3 sm:mt-4 object-cover" />
         </div>
 
         {/* Mission */}
@@ -144,7 +144,7 @@ const Aboutus = () => {
           <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
             It began with a simple idea in 2025: Bharathkumar Ramachandiran saw a need for innovation and automation and decided to act. From a home office, we’ve grown into a company that’s helped 50 clients across the state. Our journey’s fueled by passion, grit, and a promise to stand by you—every step of the way.
           </p>
-          <img src="/ourstory.png" alt="Azhizen Team" className="rounded-[20px] max-w-[250px] sm:max-w-[300px] mx-auto mt-3 sm:mt-4 object-cover" />
+          <img src={ourstory} alt="Azhizen Team" className="rounded-[20px] max-w-[250px] sm:max-w-[300px] mx-auto mt-3 sm:mt-4 object-cover" />
         </div>
       </div>
     </div>
