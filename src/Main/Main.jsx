@@ -2,8 +2,8 @@ import React from 'react';
 import HeroSection from '../components/HeroSection';
 import ServicesSection from '../components/ServicesSection';
 import AboutUsSection from '../components/AboutUsSection';
-import FoundersSection from '../components/FoundersSection';
 import CommunityPartner from '../components/CommunityPartner';
+// import TeamPage from '../components/TeamPage';
 
 const Main = () => {
   return (
@@ -15,8 +15,8 @@ const Main = () => {
           <ServicesSection />
         </section>
         <AboutUsSection />
-        <FoundersSection />
-        <CommunityPartner/>
+        {/* <TeamPage /> */}
+        <CommunityPartner />
       </div>
     </div>
   );

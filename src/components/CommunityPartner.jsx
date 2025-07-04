@@ -1,5 +1,4 @@
 import React from 'react';
-import Gfglogo from '../assets/Gfglogo .png';
 
 const CommunityPartner = () => {
   return (
@@ -15,7 +14,7 @@ const CommunityPartner = () => {
 
       <div className="bg-white shadow-2xl rounded-xl p-6 flex flex-col items-center transition-transform hover:scale-105 duration-300">
         <img
-          src={Gfglogo}
+          src="https://portfolio-assest.s3.us-east-1.amazonaws.com/gfg.jpeg"
           alt="Community Partner Logo"
           className="w-28 h-2 sm:w-42 sm:h-22 object-contain mb-4"
         />

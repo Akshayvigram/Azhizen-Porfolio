@@ -1,5 +1,8 @@
 import React from "react";
-import ceo from '../assets/ceo.jpeg';
+import ceo from '../assets/ceo.webp';
+import ourstory from '../assets/ourstory.webp';
+import Aboutus1 from '../assets/Aboutus1.webp';
+
 
 const Aboutus = () => {
   return (
@@ -31,7 +34,7 @@ const Aboutus = () => {
               </div>
               <div className="md:w-1/2 flex justify-end">
                 <img
-                  src="/Aboutus1.png"
+                  src={Aboutus1}
                   alt="About Azhizen"
                   className="rounded-lg w-full max-w-sm lg:max-w-md 2xl:max-w-lg h-auto object-cover"
                 />
@@ -87,7 +90,7 @@ const Aboutus = () => {
               </div>
               <div className="md:w-1/2 flex justify-end">
                 <img
-                  src="/ourstory.png"
+                  src={ourstory}
                   alt="Azhizen Team"
                   className="rounded-[20px] w-full max-w-sm lg:max-w-md 2xl:max-w-lg h-80 lg:h-96 2xl:h-[480px] object-cover"
                 />
@@ -109,7 +112,7 @@ const Aboutus = () => {
           <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
             Welcome to Azhizen, where innovation meets excellence! Founded with a vision to revolutionize biomedical and engineering solutions, we are dedicated to R&D, manufacturing, and cutting-edge product development. Our expertise spans across biomedical devices, medical technology, animal husbandry machines, AI/ML, edutech, and green tech. Whether it’s crafting advanced healthcare solutions, developing automation systems, or offering high-quality visual and design services, we are committed to transforming ideas into reality.
           </p>
-          <img src="/Aboutus1.png" alt="About Azhizen" className="rounded-lg max-w-[250px] sm:max-w-[300px] mx-auto mt-3 sm:mt-4 object-cover" />
+          <img src={Aboutus1} alt="About Azhizen" className="rounded-lg max-w-[250px] sm:max-w-[300px] mx-auto mt-3 sm:mt-4 object-cover" />
         </div>
 
         {/* Mission */}
@@ -141,7 +144,7 @@ const Aboutus = () => {
           <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
             It began with a simple idea in 2025: Bharathkumar Ramachandiran saw a need for innovation and automation and decided to act. From a home office, we’ve grown into a company that’s helped 50 clients across the state. Our journey’s fueled by passion, grit, and a promise to stand by you—every step of the way.
           </p>
-          <img src="/ourstory.png" alt="Azhizen Team" className="rounded-[20px] max-w-[250px] sm:max-w-[300px] mx-auto mt-3 sm:mt-4 object-cover" />
+          <img src={ourstory} alt="Azhizen Team" className="rounded-[20px] max-w-[250px] sm:max-w-[300px] mx-auto mt-3 sm:mt-4 object-cover" />
         </div>
       </div>
     </div>
