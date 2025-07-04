@@ -13,11 +13,11 @@ const CommunityPartner = () => {
         <div className="h-1 w-24 bg-[#00B4D9] mx-auto mt-2 rounded-full"></div>
       </h1>
 
-      <div className="bg-white shadow-xl rounded-xl p-6 flex flex-col items-center transition-transform hover:scale-105 duration-300">
+      <div className="bg-white shadow-2xl rounded-xl p-6 flex flex-col items-center transition-transform hover:scale-105 duration-300">
         <img
           src={Gfglogo}
           alt="Community Partner Logo"
-          className="w-28 h-28 sm:w-32 sm:h-32 object-contain rounded-full border-2 border-[#00B4D9] mb-4"
+          className="w-28 h-2 sm:w-42 sm:h-22 object-contain mb-4"
         />
         <h2 className="text-lg font-semibold text-gray-700">GFG Student Chapter</h2>
         <p className="text-sm text-gray-500">K.S.R.I.E.T</p>
