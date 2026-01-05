@@ -113,7 +113,7 @@ const FooterSection = () => {
         <div>
           <h4 className="text-lg font-semibold mb-3">Contact Us</h4>
           <p className="text-gray-400 mb-4">
-            azhizensolutions@gmail.com<br />
+            azhizensolutions@azhizen.com<br />
             Phone: +91 9750603988<br />
             Phone: +91 7010682506
           </p>
@@ -160,7 +160,7 @@ const FooterSection = () => {
 
         <div>
           <h4 className="text-lg font-semibold mb-3">Contact Us</h4>
-          <p className="text-white mb-1">azhizensolutions@gmail.com</p>
+          <p className="text-white mb-1">azhizensolutions@azhizen.com</p>
           <p className="text-white mb-1">+91 97506 03988</p>
           <p className="text-white mb-4 text-sm">
             KSR College of Engineering, Tiruchengode, Namakkal, Tamil Nadu
